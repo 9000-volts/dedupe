@@ -1,5 +1,5 @@
 {
-  "name": "dedupe",
+  "name": "dedupe-htmlguy",
   "version": "1.0.0",
   "description": "File Deduplicator",
   "main": "index.js",
