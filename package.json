@@ -1,0 +1,22 @@
+{
+  "name": "dedupe",
+  "version": "1.0.0",
+  "description": "File Deduplicator",
+  "main": "index.js",
+  "keywords": [
+    "dedupe",
+    "file",
+    "deduplicate",
+    "deduplicator",
+    "duplicates",
+    "dupe",
+    "dupes"
+  ],
+  "author": "htmlguy",
+  "license": "Unlicense",
+  "repo": "htmlguy/dedupe",
+  "devDependencies": {
+    "electron-prebuilt": "^0.30.3",
+    "walk": "^2.3.9"
+  }
+}
