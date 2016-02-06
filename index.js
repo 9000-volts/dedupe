@@ -1,13 +1,15 @@
-var app = require('app');  // Module to control application life.
-var BrowserWindow = require('browser-window');  // Module to create native browser window.
+/* jshint esnext: true, node: true */
+'use strict';
+
+const electron = require('electron');
+
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
 var dialog = require('dialog');
-var ipc = require('ipc');
+const ipc = electron.ipcMain;
 var walk = require ("walk");
 var scanner = require ("./scanner");
 var deduplicator = require("./deduplicator") ;
-
-// Report crashes to our server.
-require('crash-reporter').start();
 
 // Keep a global reference of the window object.
 var mainWindow = null;
@@ -51,7 +53,7 @@ ipc.on("information", function () {
   if (!infoWindow) {
     infoWindow = new BrowserWindow({width: 700, height: 650, resizable: false});
     infoWindow.setMenu (null);
-    infoWindow.loadUrl('file://' + __dirname + '/info.html');
+    infoWindow.loadURL('file://' + __dirname + '/info.html');
     infoWindow.on('closed', function() {
       infoWindow = null;
       mainWindow.focus();
@@ -67,7 +69,7 @@ app.on('ready', function() {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 500, height: 500, resizable: false});
   mainWindow.setMenu (null);
-  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+  mainWindow.loadURL('file://' + __dirname + '/index.html');
   mainWindow.on('closed', function() {
     mainWindow = null;
   });
